@@ -68,3 +68,6 @@ ax.scatter(
 	data['Proline'],
 	c = colors
 )
+
+plt.tight_layout()
+plt.show()
