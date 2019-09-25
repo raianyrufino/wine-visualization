@@ -92,3 +92,26 @@ Legend_elements = [
 		markerfacecolor='r',
 		markersize=10)
 ]
+
+ax.legend(handles=legend_elements, loc='best')
+
+# Animando o gráfico
+for angle in range(30, 330, 2):
+	
+	fig = plt.figure()
+	ax = fig.gca(projection='3d')
+	ax.scatter(
+		data['OD280/OD315 of diluted wines'],
+		data['Hue'],
+		data['Proline'],
+		color = colors)
+	
+	ax.view_init(30, angle)
+	
+	plt.tight_layout()
+	plt.gca()
+	clear_output(wait=True)
+	plt.show()
+
+
+	
