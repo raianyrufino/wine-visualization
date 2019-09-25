@@ -77,3 +77,18 @@ plt.title("Wine Quality")
 plt.xlabel('OD280/OD315 of diluted wines')
 plt.ylabel('Hue')
 ax.set_zlabel('Proline')
+
+Legend_elements = [
+	Line2D([0], [0],
+		marker='o',
+		color='w',
+		label='Good',
+		markerfacecolor='g',
+		markersize=10),
+	Line2D([0], [0],
+		marker='o',
+		color='w',
+		label='Bad',
+		markerfacecolor='r',
+		markersize=10)
+]
