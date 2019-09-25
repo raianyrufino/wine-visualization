@@ -71,3 +71,9 @@ ax.scatter(
 
 plt.tight_layout()
 plt.show()
+
+# ajeitando o grafico
+plt.title("Wine Quality")
+plt.xlabel('OD280/OD315 of diluted wines')
+plt.ylabel('Hue')
+ax.set_zlabel('Proline')
