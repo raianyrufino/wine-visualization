@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import seaborn as sns 
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.lines import Line2D
@@ -6,15 +7,15 @@ import pandas as pd
 from matplotlib import cm
 from IPython.display import clear_output
 
-# O site UCI repository forne uma grande variedade de conjunto de dados
-# Utilizado: https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+# The website UCI repository provide a wide range of data sets
+# Used: https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
 
 data = pd.read_csv
 	('https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data', 
 	   header = None
 )
 
-# Atribuindo os nomes corretos a cada variável
+# Assigning the correct names to each variable
 data.clumns = [
 	'Quality', 
 	'Alcohol',
@@ -31,14 +32,14 @@ data.clumns = [
 	'Proline',
 ]
 
-# data.head(n) -- Visualiza as n primeiras linhas
+# data.head(n) -- Display the first n lines
 
-# A variavel de interesse é a qualidade do vinho
+# The variable of interest is the quality of the wine.
 data = data[data['Quality']!=2] # filtragem das classes
 data['Quality'].value_counts() # freq por classe
 
 
-# Separando os vilhos em relação à qualidade dos mesmos
+# Separating wines by quality
 sns.pairplot(
 	data,
 	hue='QUality',
@@ -55,7 +56,7 @@ data = data[[
 	'Proline'
 ]]
 
-# Visualização das 4 variáveis escolhidas
+# Visualization of the 4 chosen variables
 fig = plt.figure()
 
 ax = fig.gca(projection='3d')
@@ -72,7 +73,7 @@ ax.scatter(
 plt.tight_layout()
 plt.show()
 
-# ajeitando o grafico
+# straightening the graph
 plt.title("Wine Quality")
 plt.xlabel('OD280/OD315 of diluted wines')
 plt.ylabel('Hue')
@@ -95,7 +96,7 @@ Legend_elements = [
 
 ax.legend(handles=legend_elements, loc='best')
 
-# Animando o gráfico
+# Animating the chart
 for angle in range(30, 330, 2):
 	
 	fig = plt.figure()
