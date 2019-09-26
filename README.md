@@ -3,6 +3,7 @@ wine quality visualization using libraries Matplotlib
 
 ![](giphy.gif)
 
+Working with multivariate data and response techniques that demonstrate the quality of wine. The data used are composed of 13 variables that describe wine characteristics and another one that determines its quality (class).
 
 To install NumPy, type the following code at a command prompt:
 
